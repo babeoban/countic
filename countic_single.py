@@ -1,5 +1,11 @@
 import time
-log_file_path = '\logs\latest.log'
+import os
+log_file_path = 'logs\\latest.log'
+if not os.path.exists(log_file_path):
+    print(f"Can't find logs")
+    print(f"Please put this script in your .minecraft folder")
+    time.sleep(5)
+    quit()
 
 while True:
     total_nether_count = 0
