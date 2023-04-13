@@ -1,6 +1,6 @@
 # countic
 
-drop in the wall folder for works (if you use julti, contact me to build)
+drop in the wall folder for works (for julti, just double click)
 
 nether.txt = nether entry count
 
