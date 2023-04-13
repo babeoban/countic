@@ -1,6 +1,10 @@
 # countic
 
-drop in the wall folder for works (for julti, just double click)
+for the wall (specnr): drop in the wall folder to get data
+
+for julti: works at any directory
+
+for single instance: drop in .minecraft
 
 nether.txt = nether entry count
 
