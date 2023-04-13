@@ -4,7 +4,7 @@ drop in the wall folder for works (if you use julti, contact me to build)
 
 nether.txt = nether entry count
 
-stronghold.txt = eye soy count
+stronghold.txt = eye spy count
 
 edn.txt = end enter count
 
