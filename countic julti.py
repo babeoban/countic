@@ -3,15 +3,29 @@ import time
 import os
 
 user_home = os.path.expanduser("~")
+print("Getting use path:" + user_home)
 profile_path = user_home + "\.Julti\selectedprofile.txt"
+
+if not os.path.exists(profile_path):
+    print(f"\.Julti\selectedprofile.txt does not exist")
+    time.sleep(5)
+    quit()
+print("Getting profile path: " + profile_path)
 with open(profile_path, 'r') as f:
     profile = f.read()
 data_path = user_home + "\.Julti\profiles\\" + profile + ".json"
+if not os.path.exists(profile_path):
+    print(f"\.Julti\profiles\\" + profile + ".json does not exist")
+    time.sleep(5)
+    quit()
+print("Getting active profile: " + data_path)
 
 with open(data_path, 'r') as f:
     data = json.load(f)
 
 log_file_paths = [inst + '\\logs\\latest.log' for inst in data['lastInstances']]
+print("Getting logs file path")
+print(log_file_paths)
 
 while True:
     total_nether_count = 0

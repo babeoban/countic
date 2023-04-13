@@ -1,8 +1,17 @@
 import re
 import time
+import os
+
+if not os.path.exists("data\\mcdirs.txt"):
+    print(f"mcdirs.txt does not exist")
+    time.sleep(5)
+    quit()
 
 with open("data\\mcdirs.txt", "r") as f:
     log_file_paths = [re.sub(r'^\d+~', '', line).strip() + "\\logs\\latest.log" for line in f]
+print("Getting logs file path")
+print(log_file_paths)
+
 
 while True:
     total_nether_count = 0
