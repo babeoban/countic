@@ -1,10 +1,6 @@
 # countic
 
-for the wall (specnr): drop in the wall folder to get data
-
-for julti: works at any directory
-
-for single instance: drop in .minecraft
+download and double click
 
 nether.txt = nether entry count
 
@@ -15,5 +11,9 @@ edn.txt = end enter count
 bastion.txt = bastion count
 
 fortress.txt = fortress
+
+blind.txt = blind times
+
+dragon.txt = kill ender dragon times
 
 (blind count working in process)
