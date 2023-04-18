@@ -227,4 +227,3 @@ while True:
             count_file.write(str(kill_ender_dragon))
 
     time.sleep(1)
-
