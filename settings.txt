@@ -1,0 +1,7 @@
+nether = 3
+bastion = 5
+fortress = 9
+blind = 12
+eye_spy = 15
+ee = 17
+kill = 20
