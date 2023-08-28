@@ -1,6 +1,9 @@
 import os
 import time
 import shutil
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
 
 k = 1
 
@@ -61,7 +64,7 @@ if not os.path.exists(folder_path):
     time.sleep(5)
     quit()
 
-while True:
+def on_created(event):
 
     nether_travel_count = 0
     nether_count = 0
@@ -226,4 +229,12 @@ while True:
         with open("dragon.txt", "w") as count_file:
             count_file.write(str(kill_ender_dragon))
 
-    time.sleep(1)
+event_handler = FileSystemEventHandler()
+event_handler.on_created = on_created
+
+observer = Observer()
+observer.schedule(event_handler, path=folder_path, recursive=False)
+
+observer.start()
+
+observer.join()
