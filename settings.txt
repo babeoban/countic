@@ -5,3 +5,4 @@ blind = 12
 eye_spy = 15
 ee = 17
 kill = 20
+last_time = 1
