@@ -24,7 +24,7 @@ try:
             continue
         name, value = line.split("=")
         name = name.strip()
-        value = int(value.strip())
+        value = float(value.strip())
         settings[name] = value
 except:
     print('Can not find settings.txt! Appending default settings.txt!')
@@ -73,14 +73,14 @@ firstcheck('stronghold.txt')
 firstcheck('dragon.txt')
 
 if k:
-    nether = int(settings["nether"])
-    bastion = int(settings["bastion"])
-    fortress = int(settings["fortress"])
-    blind = int(settings["blind"])
-    eye_spy = int(settings["eye_spy"])
-    ee = int(settings["ee"])
-    kill = int(settings["kill"])
-    last_time = int(settings["last_time"])
+    nether = float(settings["nether"])
+    bastion = float(settings["bastion"])
+    fortress = float(settings["fortress"])
+    blind = float(settings["blind"])
+    eye_spy = float(settings["eye_spy"])
+    ee = float(settings["ee"])
+    kill = float(settings["kill"])
+    last_time = float(settings["last_time"])
 
 if (last_time):
     firstcheck('nether_last_time.txt')
@@ -129,80 +129,80 @@ def on_created(event):
                 content = f.read()
                 if "nether_travel" in content:
                     nether_travel_count += 1
-                    if (blind):
+                    if (blind > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "nether_travel" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < blind:
                                     sub_blind += 1
                 if "enter_bastion" in content:
                     bastion_count += 1
-                    if (bastion):
+                    if (bastion > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "enter_bastion" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < bastion:
                                     sub_bastion += 1                    
                 if "enter_fortress" in content:
                     fortress_count += 1
-                    if (fortress):
+                    if (fortress > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "enter_fortress" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < nether:
                                     sub_fortress += 1                    
                 if "enter_nether" in content:
                     nether_count += 1
-                    if (nether):
+                    if (nether > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "enter_nether" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < nether:
                                     sub_nether += 1                    
                 if "enter_stronghold" in content:
                     stronghold_count += 1
-                    if (eye_spy):
+                    if (eye_spy > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "enter_stronghold" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < eye_spy:
                                     sub_sh += 1                    
                 if "enter_end" in content:
                     edn_count += 1
-                    if (ee):
+                    if (ee > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "enter_end" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < ee:
                                     sub_ee += 1   
                 if "kill_ender_dragon" in content:
                     kill_ender_dragon += 1
-                    if (kill):
+                    if (kill > 0):
                         for i, line in enumerate(content.split("\n")):
                             if "kill_ender_dragon" in line:
                                 line_num = int(i+1)
                                 data = content.split("\n")[line_num].strip()
                                 data = int(data[7:-1])
                                 data = int(data + 10000)
-                                min = int(data/60000)
+                                min = float(data/60000)
                                 if min < kill:
                                     sub_kill += 1   
     

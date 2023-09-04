@@ -1,4 +1,4 @@
-nether = 3
+nether = 0.5
 bastion = 5
 fortress = 9
 blind = 12
